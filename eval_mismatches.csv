@@ -1,0 +1,104 @@
+Issue,Subject,Company,expected_Status,agent_Status,expected_Request_Type,agent_Request_Type,expected_Product_Area,agent_Product_Area,expected_Response,agent_Response,agent_Justification,response_score,justification_score
+"I'm noticing that you all have many default versions of roles. (e.g. front end developer for react, angular, vue.js, etc.) What do you consider best practice 
+for when to create a new test versus create a variant of the test? What are the advantages and disadvantages of using variants?","When should I create a variant versus
+ have a different test?",HackerRank,Replied,Replied,product_issue,product_issue,screen,screen,"Hi,
+
+
+Consider these guidelines when choosing between creating a new test or a variant:
+
+
+
+When to Use Test Variants:
+
+Create variants to adapt a single test to different candidate profiles, 
+such as roles with different tech stacks (React, Angular, Vue.js).
+Variants streamline assessments by showing candidates only relevant sections and generating role-specific reports.
+
+
+Advantages of Test Variants:
+
+Reduces the need to manage multiple tests, improving efficiency.
+Decreases maintenance while allowing scalable personalization.
+Ensures candidates are tested on relevant content.
+
+
+Disadvantages and Limitations of Test Variants:
+
+A test must have at least two variants to function; you cannot delete a variant if only two exist.
+Variants without logic are hidden from candidates until logic is added.","Variants are best used when you want to test the same role or skill set but with slightly different questions — for example, to reduce answer-sharing between candidates. A separate test is more appropriate when the underlying role or skill set is meaningfully different.
+
+Here is what the corpus covers on variants:
+
+Advantages of variants:
+- Variants let you maintain one logical test with multiple versions, keeping management centralized.
+- They are specifically designed to reduce the risk of candidates sharing answers, since different candidates can receive different question sets for the same role.
+- The system treats all variants as part of one test, so reporting and candidate comparison stay unified.
+
+Disadvantages / considerations:
+- A variant-based test requires at least two variants — you cannot have a single variant alone.
+- Setting up variants adds configuration overhead compared to a single flat test.
+
+For your specific example (Front-End Developer for React, Angular, Vue.js): because these frameworks represent meaningfully different skill sets — not just shuffled versions of the same questions — separate tests per framework is the more appropriate choice. Variants work best when the role is the same and you just want question shuffling or anti-cheating differentiation, not when the underlying technology stack differs.
+
+Note: the corpus chunk on variants covers how to create them (hackerrank/screen/managing-tests/7530103378-test-variants.md) but does not include an explicit best-practices comparison of variants vs. separate tests beyond the anti-cheating use case. If you need deeper strategic guidance on structuring your assessment library, a HackerRank account manager or support specialist may be able to provide more tailored advice.","Grounded primarily on 'Create Test Variants' (hackerrank/screen/managing-tests/7530103378-test-variants.md) for variant mechanics and the two-variant minimum rule, and on 'Best Practices for Screening' (hackerrank/screen/best-practice-guides/3584214233-best-practices-for-screening.md) for the multiple-test-versions anti-cheating rationale. No chunk explicitly addresses the variant-vs-separate-test strategic decision, so the response notes the limitation and suggests escalation for deeper guidance.",1,2
+"Hi there
+
+We have sent a candidate a Hackerrank assessment already, but we have been informed that they require extra time. As the assessment is 105 minutes, they need an extra 50% extra time added (so around 53 minutes) in addition.
+
+Please can you provide step-by-step instruction on how we are to reinvite them.
+
+Do we find their profile in 'Candidates' , put in Add time 53 minutes and then click 'reinvite' and send the email? The email to the candidate says 105 minutes as the duration though still so not sure how we can check?
+
+Thanks","How to reinvite candidate to Hackerrank 
+assessment and add extra time",HackerRank,Replied,Replied,product_issue,product_issue,screen,screen,"Log in to your HackerRank for Work account using your credentials.
+Go to the Tests tab. 
+Select the test you want to modify.
+Go to the Candidates tab.
+Select the checkbox next to the candidate(s) you want to accommodate time.
+Click More > Add Time Accommodation. 
+Enter the accommodation percentage in multiples of five.
+Click Save. A success message appears.
+
+Time accommodation can also be added before the invite has been sent. Please refer to this support article for the detailed steps : https://support.hackerrank.com/articles/4811403281-adding-extra-time-for-candidates","To add extra time accommodation for a candidate who has already been invited (but has not yet started the test), you can use the Add Time Accommodation feature. Here is the recommended workflow based on HackerRank's support documentation:
+
+1. Go to the Candidates tab for the relevant test.
+2. Find the candidate and add the time accommodation (e.g. 53 minutes) before reinviting them — the Add Time Accommodation feature works before or after sending invites, as long as the candidate has not yet started the test.
+3. Reinvite the candidate.
+
+Regarding your question about the invitation email still showing 105 minutes: as of the April 2026 release, candidates can now see their time accommodation separately from the base test duration on the test landing page before starting the assessment. This means the email may still reference the base duration (105 minutes), but when the candidate lands on the test page, they will see both the original test duration and the additional time granted displayed separately.
+
+For full step-by-step details on both the Add Time Accommodation and Add Extra Time methods, please refer to the official article here: https://support.hackerrank.com/articles/4811403281-adding-extra-time-for-candidates
+
+Note: the exact steps for navigating the reinvite flow within the Candidates tab are not fully detailed in the retrieved documentation, so if you run into difficulty completing the reinvite step, you may want to contact HackerRank support directly for confirmation.","Grounded primarily on 'Extend Test Duration for Candidates Add Time Accommodation Add extra time' (hackerrank/screen/managing-tests/4811403281-adding-extra-time-for-candidates.md) for the feature description and eligibility condition (before candidate starts), and on 'April 2026 Release Notes' (hackerrank/general-help/release-notes/4368819843-april-2026-release-notes.md) for the time accommodation visibility on the test landing page, which directly addresses the user's concern about the email still showing 105 minutes. The detailed reinvite step sequence is not fully covered in the retrieved chunks, so a note to contact support was added.",1,2
+"One of my claude conversations has some private info, i forgot to make a temporary chat, is there anything
+ else that can be done? like delete etc?",,Claude,Replied,Replied,product_issue,product_issue,privacy,conversation_management,"To delete an individual conversation:
+
+1. Navigate to the conversation you want to delete.
+
+2. Click on the name of the conversation at the top of the screen.
+
+3. Select either ""Delete"" from the options that appear:
+
+
+
+https://privacy.claude.com/en/articles/11117329-how-can-i-delete-or-rename-a-conversation","Yes, you can delete the conversation. Claude allows you to delete or rename conversations, which removes them from your visible history.
+
+For step-by-step instructions, see: https://privacy.claude.com/en/articles/11117329-how-can-i-delete-or-rename-a-conversation
+
+For more details on data retention and what happens after deletion, you can also visit the Privacy Center at https://privacy.anthropic.com/en/ or review the article on how long data is stored.",Grounded on the 'How can I delete or rename a conversation?' article (claude/claude/conversation-management/8230524-how-can-i-delete-or-rename-a-conversation.md) and the related privacy links in chunk 1 and chunk 3. The corpus confirms self-service deletion is available via the linked article.,2,2
+What is the name of the actor in Iron Man?,"Urgent, please help",None,Replied,Replied,invalid,invalid,conversation_management,,"I am sorry, this is out of scope from my capabilities","I am sorry, this is out of scope from my capabilities.",Out of scope of HackerRank / Claude / Visa support.,2,2
+I bought Visa Traveller's Cheques from Citicorp and they were stolen in Lisbon last night. What do I do?,,Visa,Replied,Replied,product_issue,product_issue,travel_support,travel_support,"Call the issuer (Citicorp) immediately. 
+Freephone 1-800-645-6556 or collect 1-813-623-1709, Mon–Fri 6:30 am–2:30 pm EST. 
+
+Automated cheque verification is available 24/7 in English/Spanish; outside Citicorp's hours your call is recorded and returned the next business day.
+
+Have this info ready before you call, it's what the issuer will ask: cheque serial numbers, where and when you bought the cheques, how/when they were lost or stolen, and the issuer name (Citicorp). 
+
+Refunds can typically be arranged within 24 hours, subject to T&Cs.
+Notify the local police in Lisbon (Visa's safety guidance for lost/stolen cheques).
+If you can't reach Citicorp, use Visa's traveller's-cheque contact form on visa.co.in.","If your Visa Traveller's Cheques are lost or stolen, they can be replaced or refunded subject to certain terms and conditions. You should immediately call the issuing bank — in your case, Citicorp. If you cannot find Citicorp's contact details, you can contact Visa directly about traveller's cheques here: /supporting-info/travelers-cheques-contact-us.html","Grounded on the 'Visa Traveller's Cheques for Consumers -> Report a lost cheque' article (visa/support/consumer/travelers-cheques.md), which covers exactly this scenario. Derived product area overridden from 'support' to 'travel_support' as this is clearly a travel-related product issue and 'travel_support' is in the canonical label set.",1,1
+Where can I report a lost or stolen Visa card from India?,Card stolen,Visa,Replied,Replied,product_issue,product_issue,general_support,general_support,"Call Visa India at 000-800-100-1219 to report a lost card. 
+
+From anywhere else in the world, Visa's Global Customer Assistance Service is reachable 24/7 at +1 303 967 1090 and can block your card within ~30 minutes of being reported, plus arrange emergency cash and a replacement card","To report a lost or stolen Visa card, please visit the Visa Lost or Stolen card page at /support/consumer/lost-stolen-card.html. The support team is available at any time to assist with reporting and blocking your card, and can look into providing emergency services if applicable.
+
+If you are travelling and need emergency assistance, you can also contact Visa Global Customer Assistance Services (GCAS) for your country. Take note of your card account number and the GCAS telephone number for the country you are in — Visa cardholders can report lost or stolen cards and request emergency services by calling that number. You can learn more about GCAS at the Visa Travel Support page (visa/support/consumer/travel-support.md).","Grounded on the 'What should I do if my Visa card has been lost or stolen?' section (visa/support.md) for the primary reporting path, and on 'Know the emergency numbers for lost or stolen cards' (visa/support/consumer/travel-support.md) for the GCAS hotline guidance. The fraud high_risk_topic flag was noted; corpus provides a self-service reporting path so status is Replied. Derived product_area 'support' was mapped to the closest canonical label 'general_support'.",1,1
