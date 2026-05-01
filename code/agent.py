@@ -57,6 +57,17 @@ class Agent:
             derived_product_area=derived_pa,
             canonical_areas=canonical_areas,
         )
+        # Fail-safe: low confidence on a Replied row -> escalate. Better to send
+        # a borderline ticket to a human than to ship a wrong answer.
+        if output.confidence == "low" and output.status == "Replied":
+            output = output.model_copy(update={
+                "status": "Escalated",
+                "response": "",
+                "justification": (
+                    output.justification.rstrip(". ")
+                    + ". [Auto-escalated: confidence=low.]"
+                ),
+            })
         return TraceEntry(
             safety=safety,
             plan=plan,

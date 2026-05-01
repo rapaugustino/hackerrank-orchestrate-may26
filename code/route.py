@@ -11,7 +11,7 @@ from pydantic import BaseModel, Field
 
 PROMPT_PATH = Path(__file__).resolve().parent / "prompts" / "route.md"
 
-DEFAULT_ROUTE_MODEL = "claude-haiku-4-5"
+DEFAULT_ROUTE_MODEL = "claude-sonnet-4-6"
 
 DomainName = Literal["HackerRank", "Claude", "Visa"]
 RequestType = Literal["product_issue", "feature_request", "bug", "invalid"]
@@ -56,6 +56,9 @@ class Router:
         response = self.client.messages.parse(
             model=self.model,
             max_tokens=1024,
+            # Routing is a fast classification -- thinking is unnecessary and
+            # would burn tokens on Sonnet 4.6 (which defaults to effort=high).
+            thinking={"type": "disabled"},
             system=[
                 {
                     "type": "text",

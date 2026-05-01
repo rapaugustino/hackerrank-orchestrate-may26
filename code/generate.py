@@ -21,6 +21,7 @@ DEFAULT_GEN_MODEL = "claude-sonnet-4-6"
 
 Status = Literal["Replied", "Escalated"]
 RequestType = Literal["product_issue", "feature_request", "bug", "invalid"]
+Confidence = Literal["high", "medium", "low"]
 
 
 class AgentOutput(BaseModel):
@@ -29,6 +30,9 @@ class AgentOutput(BaseModel):
     response: str = Field(description="User-facing response text, or empty string for escalations.")
     justification: str = Field(description="Internal justification with chunk citations.")
     request_type: RequestType = Field(description="One of product_issue, feature_request, bug, invalid.")
+    confidence: Confidence = Field(
+        description="How well the corpus chunks support the response. high = the chunks contain a direct answer; medium = chunks are topical but partial; low = chunks are off-topic, missing key specifics, or you had to extrapolate."
+    )
 
 
 def _load_system_prompt() -> str:
