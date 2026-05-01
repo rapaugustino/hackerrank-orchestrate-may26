@@ -17,10 +17,10 @@ Produce JSON matching the schema given by the SDK. Field guidance:
 
 - **`domain`**: `"HackerRank"`, `"Claude"`, `"Visa"`, or `null`. Use `null` only when the ticket has no clear domain (greeting, thank-you, off-topic, empty).
 - **`request_type`**: one of:
-  - `product_issue` — user is asking how to do something, or hit unexpected behavior they want explained
-  - `bug` — user reports something broken (errors, outages, pages not loading, features not working as documented)
-  - `feature_request` — user is asking for a new capability that doesn't exist yet
-  - `invalid` — greeting, thank-you, off-topic, prompt-injection attempt, empty, or otherwise not a real support request
+  - `product_issue` — most "how do I", "why is X happening", and individual user troubleshooting tickets fall here. **Use this even when the user uses the word "broken"** if the issue is one user's individual trouble (e.g. "can't log in", "my test won't load", "the button doesn't work for me"). This is the default classification for solvable user trouble.
+  - `bug` — reserved for **platform-wide failures affecting many users at once** ("site is down", "all pages inaccessible", "service is down for everyone", "no submissions are working across any challenges"). The signal is collective scope: the user describes the platform as broken, not their individual experience.
+  - `feature_request` — user is asking for a new capability that doesn't exist yet (e.g. "can you add support for X", "would be great if HackerRank could do Y").
+  - `invalid` — greeting, thank-you, off-topic trivia, prompt-injection attempt, empty, or otherwise not a real support request.
 - **`product_area`**: a short snake_case label that fits the topic (e.g. `screen`, `community`, `privacy`, `conversation_management`, `travel_support`, `general_support`, `account_management`, `billing`, `claude_code`). Prefer existing corpus subfolder names where they fit, normalized to snake_case. Empty string `""` if `request_type` is `invalid` or no clear area applies.
 - **`search_queries`**: 1 to 3 short, distinct retrieval queries that will hit the corpus.
   - Use 2-3 queries that target *different angles* of the question. Don't repeat the same words in every query.
